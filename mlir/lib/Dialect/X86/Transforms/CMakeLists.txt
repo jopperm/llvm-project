@@ -9,13 +9,21 @@ add_mlir_dialect_library(MLIRX86Transforms
   VectorContractToAMXDotProduct.cpp
   MoveAccumulatorForContractLoop.cpp
   VectorContractMultiLevelUnroll.cpp
+  PrepareVectorContractLoops.cpp
 
   LINK_LIBS PUBLIC
+  MLIRAffineDialect
   MLIRArithDialect
+  MLIRDataLayoutInterfaces
+  MLIRDialectUtils
   MLIRIR
   MLIRLinalgDialect
+  MLIRMemRefDialect
   MLIRLLVMCommonConversion
   MLIRLLVMDialect
+  MLIRSCFDialect
+  MLIRSCFUtils
+  MLIRValueBoundsOpInterface
   MLIRVectorDialect
   MLIRVectorUtils
   MLIRX86Dialect
